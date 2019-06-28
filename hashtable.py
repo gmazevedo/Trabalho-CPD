@@ -16,10 +16,11 @@ def leRating():
 	nomeRating = raw_input("nome do arquivo (rating): ")
 	arquivoRating = open(nomeRating,'r')
 
-	linha = arquivoRating.readline()
+	#linha = arquivoRating.readline()
+	#arquivoRating.next()
 	rating = arquivoRating.read()
-	rating = rating.split('\n')
-	rating.pop()
+	rating = rating.splitlines()
+	#rating.pop()
 
 	#retorna lista de ratings dos filmes, cada index contendo (userId,movieId,rating,timestamp)
 	arquivoRating.close()
@@ -79,7 +80,7 @@ def hashing(chave, i, M):
     return (chave + i) % M
 
 # END. FECHADO USANDO LISTAS ENCADEADAS + HASHING ((K+I) % M)
-def hashChaining(filmes,rating):
+def movieId(filmes,rating):
     tamanho = len(filmes)
     tamanho = int(tamanho/5)
 
@@ -123,4 +124,7 @@ def taxaOcup(hashTable,entradas):
             tamanho = tamanho + len(hashTable[k])
 
     print str(int(float(entradas)/tamanho) * 100)+"%"
+
+
+
 
