@@ -1,29 +1,27 @@
-from hashtable import *
-
-
-def userId(rating):
-    tamanho = rating[len(rating)-1].split(',')
-    tamanho = int(tamanho[0])/5
-
-    print tamanho
-
+from movie import *
+from user import *
 
 # FUNCAO PRINCIPAL
 def main():
 
-    #listaFilmes = leFilmes()
+    listaFilmes = leFilmes()
     listaRating = leRating()
 
-    userId(listaRating)
+    #userId(listaRating)
 
-    """
-    entradas = len(listaFilmes)
+
+    #entradas = len(listaFilmes)
 
     hashMovieId = movieId(listaFilmes,listaRating)
+    hashUserId = userId(listaRating,hashMovieId)
 
-    taxaOcup(hashMovieId,entradas)
+    print
+    print "TABELA HASH - MOVIE ID"
+    print
+    #for lista in hashMovieId:
+     #   for filme in lista:
+      #      printFilme(filme)
+    pesquisaUser(hashUserId)
 
-    for lista in hashMovieId:
-        printaFilmes(lista)"""
 
 main()
